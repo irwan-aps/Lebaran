@@ -2,12 +2,8 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ied Mubarok 1447 H</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<style>
-    * {
+    <style>
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -92,49 +88,58 @@ header {
 .page-wrapper {
     display: flex;
 }
-
-.title{
+  .title{
      background-color: #555;
     color: white;
     padding: 15px;
     font-weight: bold;
     font-size: 1em;}
-	
-	.running-text {
-  background: transparent;
-  color: white;
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 12px 0;
-  line-height: 1.2;
-  font-size: 20px;
-}
+        .marquee-container {
+            width: 100%;
+            overflow: hidden; /* Menyembunyikan teks yang keluar layar */
+            white-space: nowrap;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 10px 0;
+            background: blue;
+            padding: 5px 0;
+        }
 
-.running-text p {
-  display: inline-block;
-  color: white;
-  animation: run 20s linear infinite;
-}
+        .text-wrapper {
+            display: inline-block;
+            font-size: 20px;
+            font-weight: bold;
+        }
 
-.running-text p:hover {
-  animation-play-state: paused;
-}
+        /* Animasi teks ke arah KIRI (Default Marquee) */
+        .ke-kiri {
+            padding-left: 100%;
+            animation: jalan-kiri 15s linear infinite;
+            color: white;
+        }
 
-@keyframes run {
-  from {
-    transform: translateX(50%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-.foto{width:405px;height:500px;
+        /* Animasi teks ke arah KANAN */
+        .ke-kanan {
+            padding-right: 100%;
+            animation: jalan-kanan 15s linear infinite;
+            color: white;
+            direction: rtl; /* Mengatur arah baca Arab dari kanan ke kiri */
+        }
+
+        @keyframes jalan-kiri {
+            0% { transform: translateX(50); }
+            100% { transform: translateX(-100%); }
+        }
+
+        @keyframes jalan-kanan {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(50); }
+        }
+  .foto{width:380px;height:350px;
 margin-top:10px;}
-</style>
+    </style>
+</head>
 <body>
-    
-    <!-- Header/Navigasi Utama -->
-    <header>
+  <header>
         <h3>IEDUL FITRI 1447 H</h3>
         <div class="menu-malasngoding">
  <ul>
@@ -145,28 +150,21 @@ margin-top:10px;}
 				</ul>
 			</li>
     </header>
-        <!-- Konten Utama -->
-        <main>
-             <div class="running-text">
-        <p>Kami (Irwan Wahyudi dan Keluarga) Mengucapkan Selamat Hari Raya Iedul Fitri 1447 H - Mohon dimaafkan Lahir dan Batin -جَعَلَنَا اللهُ وَإِيَّاكُمْ مِنَ الْعَائِدِيْنَ وَالْفَائِزِيْنَ</p>
+
+    <!-- Baris Pertama: Gerak ke Kiri -->
+    <div class="marquee-container">
+        <div class="text-wrapper ke-kiri">
+            Kami (Irwan Wahyudi dan Keluarga) Mengucapkan Selamat Hari Raya Iedul Fitri 1447 H - Mohon dimaafkan Lahir dan Batin
         </div>
-			<img src="iedul.jpg" class="foto">
     </div>
+<img src="iedul.jpg" class="foto">
+    <!-- Baris Kedua: Gerak ke Kanan -->
+    <div class="marquee-container">
+        <div class="text-wrapper ke-kanan">
+            تَقَبَّلَ اللَّهُ مِنَّا وَمِنْكُمْ صِيَامَنَا وَصِيَامَكُمْ جَعَلَنَا اللهُ وَإِيَّاكُمْ مِنَ الْعَائِدِيْنَ وَالْفَائِزِيْن
+        </div>
+    </div>
+
 </body>
-<script>
-   document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menu-toggle');
-    const sidebar = document.getElementById('sidebar');
-
-    menuToggle.addEventListener('click', () => {
-        // Toggle class 'active' saat tombol diklik
-        sidebar.classList.toggle('active');
-    });
-});     
-</script>
 </html>
-
-
-
-
 
