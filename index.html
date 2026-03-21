@@ -130,6 +130,25 @@ header {
 
 .foto{width:405px;height:300px;
 margin-top:10px;}
+	.text-wrapper {
+            display: inline-block;
+            font-size: 20px;
+            font-weight: bold;
+        }
+.ke-kanan {
+            padding-right: 100%;
+            animation: jalan-kanan 20s linear infinite;
+            color: white;
+            direction: rtl; /* Mengatur arah baca Arab dari kanan ke kiri */
+        }
+@keyframes jalan-kanan {
+           from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(50%);
+  }
+        }
 </style>
 <body>
     
@@ -156,6 +175,11 @@ margin-top:10px;}
         <div class="running-text">
         <p>Taqobalallahu minna wa minkum shiyamana wa shiyamakum... Waj'alnallahu waiyakum minal aidin wal faizin</p>   
         </div>
+	  <div class="running-text">
+        <div class="text-wrapper ke-kanan">
+            تَقَبَّلَ اللَّهُ مِنَّا وَمِنْكُمْ صِيَامَنَا وَصِيَامَكُمْ جَعَلَنَا اللهُ وَإِيَّاكُمْ مِنَ الْعَائِدِيْنَ وَالْفَائِزِيْن
+        </div>
+    </div>
 </body>
 <script>
    document.addEventListener('DOMContentLoaded', () => {
